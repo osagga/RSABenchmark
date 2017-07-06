@@ -211,7 +211,7 @@ namespace RSA_Benchmark
         static void Main(string[] args)
         {
             // Number of (key, input) pairs
-            double iterations = 10.0;
+            double iterations = 1.0;
             // Number of iterations per pair
             double subIterations = 100.0;
 
