@@ -32,8 +32,8 @@ namespace RSA_Benchmark
                 DecTime += output[1];
 
             }
-            Console.WriteLine("Normal RSA |Encryption |e = {0} | {1} seconds", Exp, EncTime / iterations);
-            Console.WriteLine("Normal RSA |Decryption |e = {0} | {1} seconds", Exp, DecTime / iterations);
+            Console.WriteLine("Normal RSA   |Encryption |e = {0}| {1} seconds", Exp, EncTime / iterations);
+            Console.WriteLine("Normal RSA   |Decryption |e = {0}| {1} seconds", Exp, DecTime / iterations);
 
             // Weird RSA
 
@@ -58,8 +58,8 @@ namespace RSA_Benchmark
 
             }
 
-            Console.WriteLine("Weird RSA |Encryption |e = {0} | {1} seconds", Exp, EncTime / iterations);
-            Console.WriteLine("Weird RSA |Decryption |e = {0} | {1} seconds", Exp, DecTime / iterations);
+            Console.WriteLine("Weird RSA    |Encryption |e = {0}| {1} seconds", Exp, EncTime / iterations);
+            Console.WriteLine("Weird RSA    |Decryption |e = {0}| {1} seconds", Exp, DecTime / iterations);
 
             return;
         }
