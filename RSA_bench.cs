@@ -221,7 +221,7 @@ namespace RSA_Benchmark
             // Test e = 65537
             testKey(65537, iterations, subIterations);
 
-            Console.WriteLine("------- Done --------");
+            Console.WriteLine("------- Done -------- Press any key to exit");
             Console.ReadLine();
         }
 
