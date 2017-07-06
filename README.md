@@ -9,3 +9,6 @@ Benchmarking two ways of doing RSA ecryption and Decryption
 	
 	`mcs -r:BouncyCastle.1.8.1/lib/BouncyCastle.Crypto.dll RSA_bench.cs && mono RSA_bench.exe`
 
+## Benchmark Results:
+
+You can find it in ["results.pdf"](https://github.com/osagga/RSA_Benchmark/blob/master/results.pdf)
