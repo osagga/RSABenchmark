@@ -16,7 +16,7 @@ namespace RSA_Benchmark
         public static void testKey(int Exp, double iterations, double subIterations)
         {
             // Generate a list of 'iterations' keys.
-            AsymmetricCipherKeyPair[] keys = genRandKeys( (int) iterations, BigInteger.ValueOf(Exp));
+            AsymmetricCipherKeyPair[] keys = genRandKeys((int)iterations, BigInteger.ValueOf(Exp));
             // Generate a list of 'iterations' inputs.
             byte[][] data = genRandData(keys);
 
@@ -40,7 +40,7 @@ namespace RSA_Benchmark
             for (int i = 0; i < iterations; i++)
             {
                 // Extract the private key 'i' from the keypair 'i'
-                var key = ((RsaPrivateCrtKeyParameters) keys[i].Private);
+                var key = ((RsaPrivateCrtKeyParameters)keys[i].Private);
                 BigInteger N = key.Modulus;
                 // Generate a new private key with e = e * N
                 keys[i] = GeneratePrivate(key.P, key.Q, N.Multiply(key.PublicExponent));
@@ -73,7 +73,7 @@ namespace RSA_Benchmark
             // Decrypt
             byte[] plainText = Decrypt(key, cipherText);
             // Validate
-            if (!new BigInteger(1,plainText).Equals(new BigInteger(1,input)))
+            if (!new BigInteger(1, plainText).Equals(new BigInteger(1, input)))
                 throw new InvalidCipherTextException("Validation Failed");
 
             // Benchmarks
@@ -124,9 +124,9 @@ namespace RSA_Benchmark
             return data;
         }
 
-        public static  byte[] Decrypt(AsymmetricCipherKeyPair key, byte[] encrypted)
+        public static byte[] Decrypt(AsymmetricCipherKeyPair key, byte[] encrypted)
         {
-            RsaPrivateCrtKeyParameters _Key = (RsaPrivateCrtKeyParameters) key.Private;
+            RsaPrivateCrtKeyParameters _Key = (RsaPrivateCrtKeyParameters)key.Private;
 
             if (encrypted == null)
                 throw new ArgumentNullException(nameof(encrypted));
@@ -139,7 +139,7 @@ namespace RSA_Benchmark
 
         public static byte[] Encrypt(AsymmetricCipherKeyPair key, byte[] data)
         {
-            RsaKeyParameters _Key = (RsaKeyParameters) key.Public;
+            RsaKeyParameters _Key = (RsaKeyParameters)key.Public;
 
             if (data == null)
                 throw new ArgumentNullException(nameof(data));
